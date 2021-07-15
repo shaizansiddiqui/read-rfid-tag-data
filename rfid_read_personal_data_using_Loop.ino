@@ -1,9 +1,9 @@
 /*
- * Initial Author: ryand1011 (https://github.com/ryand1011)
+ * Initial Author: Shaizan Siddiqui
  *
- * Reads data written by a program such as "rfid_write_personal_data.ino"
+ * Reads data written by a program such as "rfid_write_personal_data_using_Loop.ino"
  *
- * See: https://github.com/miguelbalboa/rfid/tree/master/examples/rfid_write_personal_data
+ * See: https://github.com/shaizansiddiqui/read-rfid-tag-data.git
  *
  * Uses MIFARE RFID card using RFID-RC522 reader
  * Uses MFRC522 - Library
@@ -76,35 +76,7 @@ void loop() {
 ///  block = 38;
   len = 18;
 
-  //------------------------------------------- GET FIRST NAME
-//  status = mfrc522.PCD_Authenticate(MFRC522::PICC_CMD_MF_AUTH_KEY_A, block, &key, &(mfrc522.uid)); //line 834 of MFRC522.cpp file
-//  if (status != MFRC522::STATUS_OK) {
-//    Serial.print(F("Authentication failed: "));
-//    Serial.println(mfrc522.GetStatusCodeName(status));
-//    return;
-//  }
-//
-//  status = mfrc522.MIFARE_Read(block, buffer1, &len);
-//  if (status != MFRC522::STATUS_OK) {
-//    Serial.print(F("Reading failed: "));
-//    Serial.println(mfrc522.GetStatusCodeName(status));
-//    return;
-//  }
-//
-//  //PRINT FIRST NAME
-//  for (uint8_t i = 0; i < 16; i++)
-//  {
-//    if (buffer1[i] != 32)
-//    {
-//      Serial.write(buffer1[i]);
-//    }
-//  }
-//  Serial.print(" ");
-
-  //---------------------------------------- GET LAST NAME
-  //block = 8;
-//do
-//{
+ 
   byte buffer2[18];
   //block = 9;
 for(byte block = 1;block<24;block++)
@@ -145,12 +117,7 @@ str += tagData;
 Serial.print("str");
 Serial.println(str);
   }
-//  Serial.print("************************Tag Data*****************");
-//    Serial.println(tagData);
-//block++;
-//}while(block<65);
 
-  //----------------------------------------
 
   Serial.println(F("\n**End Reading**\n"));
   Serial.println(str);
