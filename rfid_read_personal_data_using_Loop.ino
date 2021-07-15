@@ -79,6 +79,7 @@ void loop() {
  
   byte buffer2[18];
   //block = 9;
+  //Change loop terminate condition from 24 to 64 to read all blocks of tag
 for(byte block = 1;block<24;block++)
 {
    if(block ==3 || block==7 || block==11 || block ==15 || block==19 )
